@@ -101,6 +101,14 @@ const init = database => {
       hasNext 
     };
   }
+
+  const deleteAll = async() => {
+    const dbConn = await db.init(database);
+    let index = []
+    const data = await db.query(dbConn, `delete from category`);
+    const dataAffected = data.rowsAffected;
+  }
+
   return {
     findAll,
     findAllByCategory,
@@ -109,7 +117,8 @@ const init = database => {
     create,
     update,
     updateCategories,
-    addImage
+    addImage,
+    deleteAll
   }
 }
 

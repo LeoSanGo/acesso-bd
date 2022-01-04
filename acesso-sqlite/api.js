@@ -16,14 +16,12 @@ const test = async() => {
   //await products.create([2, 'aaaa', 90])
   //await products.addImage(2, [3, '<url3>', '<desc3>'])
   //await products.update(1, ['new prod', 89])
-  //await products.remove([1]) 
-  //console.log(await products.findAll());
-  //console.log('cp: 0', await products.findAllPaginated({ pageSize: 2, currentPage: 0 }));
-  //await products.updateCategories(1, [1])
-  console.log(await products.findAllByCategory());
-
-
-
+  await products.remove([1]) 
+  console.log(await products.findAll());
+  console.log('cp: 0', await products.findAllPaginated({ pageSize: 2, currentPage: 0 }));
+  await products.updateCategories(1, [1])
+  console.log(await products.findAllByCategory(8));
+  
 }
 
 test();
